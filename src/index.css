@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-brand-bg text-brand-white font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .card-pink {
+    @apply rounded-2xl border border-brand-border bg-brand-card/60 backdrop-blur-sm transition-all duration-300 hover:border-brand-pink/30 hover:shadow-pink-sm;
+  }
+  .glass-pink {
+    @apply bg-gradient-to-t from-brand-bg/90 via-brand-bg/60 to-transparent backdrop-blur-md;
+  }
+  .pill-pink {
+    @apply rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-300;
+  }
+  .pill-pink-active {
+    @apply bg-pink-gradient text-white shadow-pink-sm;
+  }
+  .pill-pink-idle {
+    @apply border border-brand-border text-brand-muted hover:border-brand-pink/40 hover:text-brand-white;
+  }
+  .chip-pink {
+    @apply inline-flex items-center rounded-md border border-brand-pink/20 bg-brand-pink/5 px-2.5 py-1 text-xs font-medium text-brand-pink-soft transition-all hover:border-brand-pink/40 hover:bg-brand-pink/10;
+  }
+  .btn-pink {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-pink-gradient px-6 py-3 text-sm font-semibold text-white shadow-pink-sm transition-all duration-300 hover:shadow-pink-md hover:scale-[1.02];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-brand-border bg-brand-card/40 px-6 py-3 text-sm font-semibold text-brand-white transition-all duration-300 hover:border-brand-pink/40 hover:bg-brand-card/80;
+  }
+}
+
+.text-pink-purple-gradient {
+  background: linear-gradient(135deg, #FF4FA3 0%, #FF1E8E 50%, #B83DFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0A0A0B; }
+::-webkit-scrollbar-thumb { background: #FF4FA3; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #FF1E8E; }
+
+@keyframes cert-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.cert-track {
+  animation: cert-scroll 60s linear infinite;
+}
+.cert-track.paused {
+  animation-play-state: paused;
+}
+.cert-track:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
