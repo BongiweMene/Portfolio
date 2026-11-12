@@ -8,24 +8,37 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
       {/* Hero */}
-      <section className="relative flex flex-col items-center pt-16 pb-20 text-center sm:pt-24">
-        <span className="chip-pink mb-6">AI Engineering Candidate · ICT Graduate</span>
-        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-brand-white sm:text-6xl">
-          Building intelligent, <br className="hidden sm:block" />
-          <span className="text-pink-purple-gradient">user-focused solutions</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg">
-          Hi, I&rsquo;m Bongiwe Mene &mdash; an ICT graduate and AI Engineering Candidate
-          passionate about AI, Machine Learning, Python, and Software Engineering. Explore my
-          projects, experience, and certifications.
-        </p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Link to="/projects" className="btn-pink">
-            View Projects <ArrowRight className="h-4 w-4" />
-          </Link>
-          <Link to="/contact" className="btn-ghost">
-            Get in Touch
-          </Link>
+      <section className="relative grid items-center gap-12 py-16 sm:gap-16 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+        <div className="text-center lg:text-left">
+          <span className="chip-pink">AI Engineering Candidate · ICT Graduate</span>
+          <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-brand-white sm:text-6xl lg:mx-0">
+            Building intelligent, <br className="hidden sm:block" />
+            <span className="text-pink-purple-gradient">user-focused solutions</span>
+          </h1>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg lg:mx-0">
+            Hi, I&rsquo;m Bongiwe Mene &mdash; an ICT graduate and AI Engineering Candidate
+            passionate about AI, Machine Learning, Python, and Software Engineering. Explore my
+            projects, experience, and certifications.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+            <Link to="/projects" className="btn-pink">
+              View Projects <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link to="/contact" className="btn-ghost">
+              Get in Touch
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative mx-auto w-full max-w-md lg:max-w-none">
+          <div className="absolute -inset-3 rounded-[2rem] bg-brand-pink/10 blur-2xl" aria-hidden="true" />
+          <div className="relative overflow-hidden rounded-[2rem] border border-brand-border bg-brand-card shadow-card-dark">
+            <img
+              src="/images/ChatGPT_Image_Nov_12,_2026,_03_28_14_AM.png"
+              alt="Bongiwe Mene"
+              className="aspect-[4/5] w-full object-cover object-top"
+            />
+          </div>
         </div>
       </section>
 
