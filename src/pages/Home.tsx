@@ -2,6 +2,27 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Cpu, GraduationCap, Briefcase, Award } from 'lucide-react';
 import { projects } from '@/data/portfolio';
 
+const tickerSkills = [
+  'Python',
+  'Java',
+  'JavaScript',
+  'React.js',
+  'Node.js',
+  'HTML & CSS',
+  'SQL / MySQL',
+  'REST APIs',
+  'Streamlit',
+  'Artificial Intelligence',
+  'Machine Learning',
+  'Generative AI',
+  'Prompt Engineering',
+  'Scikit-learn',
+  'Git & GitHub',
+  'Data Science',
+  'Cloud Computing',
+  'Cybersecurity',
+];
+
 export default function Home() {
   const featured = projects.slice(0, 3);
 
@@ -40,6 +61,26 @@ export default function Home() {
               alt="Bongiwe Mene"
               className="aspect-[4/5] w-full object-cover object-top"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="skills-ticker-section pb-20" aria-label="Technical skills">
+        <div className="mb-4 flex items-center justify-between gap-4 px-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">Technical toolkit</p>
+          <span className="hidden text-xs text-brand-muted/70 sm:block">Always learning, always building</span>
+        </div>
+        <div className="skills-ticker" role="region" aria-label="Scrolling list of technical skills">
+          <div className="skills-ticker-track">
+            {[0, 1].map((copyIndex) => (
+              <div key={copyIndex} className="skills-ticker-group" aria-hidden={copyIndex === 1}>
+                {tickerSkills.map((skill) => (
+                  <span key={`${copyIndex}-${skill}`} className="skills-ticker-pill">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </section>
