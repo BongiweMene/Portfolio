@@ -61,6 +61,10 @@ export default function Home() {
               alt="Bongiwe Mene"
               className="aspect-[4/5] w-full object-cover object-top"
             />
+            <div className="hero-title-badge">
+              <span className="hero-title-badge-dot" aria-hidden="true" />
+              Software Developer
+            </div>
           </div>
         </div>
       </section>
