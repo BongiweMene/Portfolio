@@ -12,15 +12,15 @@ export default function Home() {
         <div className="text-center lg:text-left">
           <span className="chip-pink tracking-[0.08em]">AI ENGINEERING CANDIDATE · ICT GRADUATE</span>
           <h1 className="mx-auto mt-6 max-w-3xl text-4xl font-bold leading-[1.12] tracking-tight text-brand-white sm:text-5xl lg:mx-0 lg:text-[3.45rem]">
-            Building intelligent, user-focused solutions through{' '}
-            <span className="text-pink-purple-gradient">AI &amp; Software Development.</span>
+            Aspiring AI Engineer <span className="text-pink-purple-gradient">|</span>{' '}
+            Software Developer <span className="text-pink-purple-gradient">|</span>{' '}
+            ICT Graduate
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-brand-muted sm:text-lg lg:mx-0">
-            Hi, I&rsquo;m Bongiwe Mene &mdash; an ICT graduate specialising in Application Development
-            and an AI Engineering Candidate at CAPACITI. I&rsquo;m passionate about Artificial
-            Intelligence, Machine Learning and Software Development. I enjoy building applications,
-            exploring intelligent technologies and developing practical solutions to real-world
-            problems. Explore my projects, technical skills and professional journey.
+            I&rsquo;m an ICT graduate specialising in Application Development and currently an AI
+            Engineering Candidate at CAPACITI. I am passionate about Artificial Intelligence,
+            Machine Learning and Software Development. I enjoy developing applications, exploring
+            emerging technologies and building practical solutions to real-world problems.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
             <Link to="/projects" className="btn-pink">
