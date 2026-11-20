@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Cpu, GraduationCap, Briefcase, Award } from 'lucide-react';
 import { projects } from '@/data/portfolio';
@@ -25,6 +26,30 @@ const tickerSkills = [
 
 export default function Home() {
   const featured = projects.slice(0, 3);
+  const badgeFloatRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const node = badgeFloatRef.current;
+    if (!node) return;
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (media.matches) return;
+
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const offset = Math.max(-24, Math.min(24, -window.scrollY * 0.08));
+      node.style.transform = `translateY(${offset}px)`;
+    };
+    const onScroll = () => {
+      if (!frame) frame = window.requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, []);
 
   return (
     <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -61,9 +86,11 @@ export default function Home() {
               alt="Bongiwe Mene"
               className="aspect-[4/5] w-full object-cover object-top"
             />
-            <div className="hero-title-badge">
-              <span className="hero-title-badge-dot" aria-hidden="true" />
-              Software Developer
+            <div className="hero-title-badge-float" ref={badgeFloatRef}>
+              <div className="hero-title-badge">
+                <span className="hero-title-badge-dot" aria-hidden="true" />
+                Software Developer
+              </div>
             </div>
           </div>
         </div>
